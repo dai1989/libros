@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateTableDetalleFactura extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('detalle_factura', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer ('id_factura')->unsigned();
+            $table->foreign ('id_factura')->references('id')->on('factura');
+            $table->integer ('id_libro')->unsigned();
+            $table->foreign ('id_libro')->references('id')->on('libros');
+            $table->string('detalle_factura_cantidad');
+            $table->float('detalle_factura_precio_unitario',8,2);
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('detalle_factura');
+    }
+}
