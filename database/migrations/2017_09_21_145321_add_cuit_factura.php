@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablePersonas extends Migration
+class AddCuitFactura extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateTablePersonas extends Migration
      */
     public function up()
     {
-        Schema::create('personas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre', 50);
-            $table->string('apellido', 50);
-            $table->integer('dni');
-            
-            $table->timestamps();
+        Schema::table('factura', function (Blueprint $table) {
+            $table-> integer ('cuit');
         });
     }
 
@@ -30,6 +25,8 @@ class CreateTablePersonas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personas');
+        Schema::table('factura', function (Blueprint $table) {
+            //
+        });
     }
 }
