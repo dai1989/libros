@@ -12,5 +12,9 @@
 */
 
 Route::resource('clientes','ClienteController');
-    
-
+Route::resource('libros','LibrosController');
+Route::resource('proveedores','ProveedoresController'); 
+Route::resource('contactos','ContactoController');
+Route::resource('stock','StockController');
+Route::resource('factura','FacturaController');
+Route::resource('detalle_factura','DetalleFacturaController');

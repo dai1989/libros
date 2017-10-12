@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Stock extends Model
+class Proveedor extends Model
 {
-    protected $table="stock";
+    protected $table="proveedores";
     public function libros ()
     {
     	return $this->belongsTo("App\Models\Libros");
