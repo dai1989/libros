@@ -1,5 +1,8 @@
+@extends('menuPrincipal')
+@section('content') 
 {{session("mensaje")}}
 <br>
+<center>
 <form method="POST" action="{{ asset('factura') }}">
 
 	<input type="hidden" name="_token" value="{{ csrf_token()}}">
@@ -11,8 +14,11 @@
 		<option value="">-- Selecciona Tipo de Factura --</option><br>
 					<option value="A">A</option>
 					<option value="B">B</option>
+					<option value="C">C</option>
+
+
 	Numero: <input type="text" name="txtNumero"><br>
-	Cuit: <input type="text" name="txtCuit">
+	Cuit: <input type="text" name="txtCuit"><br>
 	
 	Cliente:
 	<select name="cboClientes">
@@ -27,3 +33,6 @@
 <br><br>
 
 <a href="/sist_libros/public/factura">Listado</a>
+</center>
+
+@endsection

@@ -1,4 +1,5 @@
-
+ @extends('menuPrincipal')
+@section('content')
    {{session("mensaje")}}
 <br>
 <form method="POST" action="{{ asset('stock') }}">
@@ -22,3 +23,4 @@
 <br><br>
 
 <a href="/sist_libros/public/stock">Listado</a>
+@endsection

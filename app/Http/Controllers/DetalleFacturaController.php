@@ -17,8 +17,9 @@ class DetalleFacturaController extends Controller
     public function create()
     {
       $facturas_list = Factura::all();
+      $libros_list = Libros::all();
 
-      return view("detalle_factura.create", ["facturas_list"=>$facturas_list]);
+      return view("detalle_factura.create", ["facturas_list"=>$facturas_list, "libros_list" => $libros_list]);
     }
     public function store(Request $request)
     {
@@ -56,6 +57,39 @@ class DetalleFacturaController extends Controller
         return redirect("detalle_factura")->with("mensaje", $mensaje);
 
     }
+     public function edit($id) 
+    {
+      $detalle_factura =DetalleFactura::find($id);
+       return view ("detalle_factura.edit",["detalle_factura"=>$detalle_factura]);
+
+    }
+    public function update (Request $request, $id)
+    {
+      //obtener datos del formulario
+      $cantidad = $request->input ("txtCantidad");
+      $precio = $request->input ("txtPrecio");
+      $factura = $request->input("cboFactura");
+      $libro= $request->input("cboLibro");
+     
+
+      //obtener el cliente a modificar
+      $cliente = Cliente::find($id);
+
+      //asignar datos al cliente
+      $detalle_factura->cantidad =$cantidad;
+      $detalle_factura->precio =$precio;
+     
+      $detalle_factura->factura_id = $factura;
+      $detalle_factura->libro_id=$libro;
+      $detalle_factura-> save();
+      //$cliente->save();
+
+        $mensaje = "Detalle modificado correctamente";
+      return redirect("detalle_factura/" . $id . "/edit")-> with ("mensaje", $mensaje);
+
 }
+
+}
+
 
 

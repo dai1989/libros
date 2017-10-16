@@ -1,10 +1,12 @@
+@extends('menuPrincipal')
+@section('content')  
 <center><h1>Lista de proveedores</h1></center>
 {{session("mensaje")}}
 
-
+<center>
 <a href="proveedores/create">Nuevo Proveedor</a>
 <br><br>
-<center>
+
 <table border="1">
 	    <tr>
 		<th>Razon Social</th>
@@ -26,7 +28,10 @@
 	<th>{{ $proveedor->celular}}</th>
 	<th>{{ $proveedor->telefono_fijo}}</th>
 	<td>
-	<a href="proveedores/{{$proveedor->id}}"> Eliminar</a>
+		<a href="proveedores/{{$proveedor->id}}/edit"><i class='glyphicon glyphicon-edit'></i>Modificar</a></li> - 
+		
+		<a href="proveedores/{{$proveedor->id}}"><i class='glyphicon glyphicon-trash'></i>Eliminar</a></li>
+	
 </td>
 	
 	</tr>
@@ -34,3 +39,4 @@
 	
 </table>
 </center>
+@endsection

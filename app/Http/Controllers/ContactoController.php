@@ -55,6 +55,39 @@ class ContactoController extends Controller
         return redirect("contactos")->with("mensaje", $mensaje);
 
     }
+     public function edit($id) 
+    {
+      $contacto =Contacto::find($id);
+       return view ("contactos.edit",["contacto"=>$contacto]);
+
+    }
+    public function update (Request $request, $id)
+    {
+      //obtener datos del formulario
+      $email = $request->input ("txtEmail");
+      $celular = $request->input ("txtCelular");
+      $telefono_fijo = $request->input("txtTelefonoFijo");
+      //$persona = $request->input("cboPersona");
+     
+
+      //obtener el cliente a modificar 
+      $contacto = Contacto::find($id);
+
+      //asignar datos al cliente
+      $contacto->email =$email;
+      $contacto->celular =$celular;
+      $contacto->telefono_fijo =$telefono_fijo;
+      //$contacto->persona_id = $persona;
+      $contacto->save();
+     
+      //$cliente->save();
+
+        $mensaje = "Contacto modificado correctamente";
+      return redirect("contactos/" . $id . "/edit")-> with ("mensaje", $mensaje);
+
+    }
 }
+
+
 
 

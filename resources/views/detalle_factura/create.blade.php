@@ -1,4 +1,8 @@
+@extends('menuPrincipal')
+@section('content') 
+<center>
 <form method="POST" action="{{ asset('detalle_factura') }}">
+
 
 	<input type="hidden" name="_token" value="{{ csrf_token()}}">
 	
@@ -13,6 +17,14 @@
 	  <option value="{{ $factura->id }}">{{ $factura->numero }}</option>
 	@endforeach
 	</select><br>
+
+	Libros:
+	<select name="cboLibro">
+		<option value="">--Seleccionar--</option><br>
+		@foreach ($libros_list as $libro)
+		<option value="{{$libro->id}}">{{$libro->titulo}}</option>
+		@endforeach
+	</select><br>
 	
 
 
@@ -22,3 +34,5 @@
 <br><br>
 
 <a href="/sist_libros/public/detalle_factura">Listado</a>
+</center>
+@endsection

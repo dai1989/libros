@@ -1,8 +1,10 @@
+  @extends('menuPrincipal')
+@section('content')
  <html>
-<!DOCTYPE html>
-<!-- saved from url=(0050)http://getbootstrap.com/examples/navbar-fixed-top/ -->
+
 <html lang="es">
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +14,7 @@
     <title>Sistema de libros</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/ie-emulation-modes-warning.js"></script>
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script> 
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/bootstrap-filestyle.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -68,4 +70,5 @@
 </form>
 <br><br>
 
-<a href="/sist_libros/public/contactos">Listado</a>
+<a href="/sist_libros/public/contactos">Listado</a> 
+@endsection

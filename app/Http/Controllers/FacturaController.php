@@ -58,7 +58,42 @@ class FacturaController extends Controller
         return redirect("factura")->with("mensaje", $mensaje);
 
     }
+    public function edit($id) 
+    {
+      $factura =Factura::find($id);
+       return view ("factura.edit",["factura"=>$factura]);
+
+    }
+    public function update (Request $request, $id)
+    {
+      //obtener datos del formulario
+      $fecha = $request->input ("txtFecha");
+      $tipo = $request->input ("txtTipo");
+      $numero = $request->input("txtNumero");
+      $cuit = $request->input ("txtCuit");
+      
+
+      //obtener el cliente a modificar
+      $factura = Factura::find($id);
+
+      //asignar datos al cliente
+       $factura->cliente_id = $clientes;
+      $factura->fecha =$fecha;
+      $factura->tipo =$tipo;
+      $factura->numero =$numero;
+      $factura->cuit=$cuit;
+      $factura-> save();
+      
+      //$cliente->save();
+
+        $mensaje = "Factura modificado correctamente";
+      return redirect("factura/" . $id . "/edit")-> with ("mensaje", $mensaje);
+
+    }
 }
+
+
+
 
 
 

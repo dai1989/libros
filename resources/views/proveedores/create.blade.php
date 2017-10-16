@@ -1,4 +1,7 @@
+@extends('menuPrincipal')
+@section('content')  
 <center><h1>Agregar Proveedor</h1></center>
+<center>
  {{session("mensaje")}}
 <form method="POST" action="{{ asset('proveedores') }}">
 
@@ -14,5 +17,8 @@
 	<input type="submit" value="Guardar Datos">
 
 </form>
+
 <br><br>
 <a href="/sist_libros/public/proveedores">Listado</a>
+</center>
+@endsection

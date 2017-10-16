@@ -1,35 +1,5 @@
-<html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-    <link rel="icon" href="img/favicon.ico">
-    <title>Sistema de libros</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/ie-emulation-modes-warning.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/bootstrap-filestyle.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.numeric.js"></script>
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-
-</head>
-        <body>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8"><font color="#000"><center><strong><h1>Listado de Libros</h1></strong></center></font></div>
-                    <div class="col-md-2"></div>
-                </div>
-                <hr>
-    <h3>    
-        <p class="bg-danger" align="center">
-        <b>
+ @extends('menuPrincipal')
+@section('content')
 
 
 
@@ -65,8 +35,10 @@
 	<th>{{ $libros->precio}}</th>
 	<th>{{ $libros->isbn}}</th>
 	<td>
+		<a href="libros/{{$libros->id}}/edit"><i class='glyphicon glyphicon-edit'></i>Modificar</a></li> - 
 		
-		<a href="libros/{{$libros->id}}"> Eliminar</a>
+		<a href="libros/{{$libros->id}}"><i class='glyphicon glyphicon-trash'></i>Eliminar</a></li>
+		
 		
 		
 	</tr>
@@ -74,3 +46,4 @@
 	
 </table>
 </center>
+@endsection
