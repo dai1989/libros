@@ -61,7 +61,8 @@ class FacturaController extends Controller
     public function edit($id) 
     {
       $factura =Factura::find($id);
-       return view ("factura.edit",["factura"=>$factura]);
+      $clientes_list = Cliente::all();
+       return view ("factura.edit",["factura"=>$factura,"clientes_list"=>$clientes_list]);
 
     }
     public function update (Request $request, $id)
@@ -71,12 +72,11 @@ class FacturaController extends Controller
       $tipo = $request->input ("txtTipo");
       $numero = $request->input("txtNumero");
       $cuit = $request->input ("txtCuit");
+      $clientes = $request->input("cboClientes");
       
 
       //obtener el cliente a modificar
       $factura = Factura::find($id);
-
-      //asignar datos al cliente
        $factura->cliente_id = $clientes;
       $factura->fecha =$fecha;
       $factura->tipo =$tipo;

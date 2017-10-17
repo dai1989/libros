@@ -19,7 +19,15 @@
 
 
 	Numero: <input type="text" name="txtNumero" value="{{$factura->numero}}"><br>
-	Cuit: <input type="text" name="txtCuit" value="{{$factura->cuit}}"><br>
+	Cuit: <input type="text" name="txtCuit" value="{{$factura->cuit}}"><br> 
+	Cliente:
+	<select name="cboClientes">
+       <option value="">--Seleccionar--</option><br> 
+	@foreach ($clientes_list as $cliente)
+	  <option value="{{ $cliente->id }}">{{ $cliente->persona->nombre }}</option>
+	@endforeach
+	</select><br>
+	<input type="submit" value="Modificar Datos">
 	
 
 </form>

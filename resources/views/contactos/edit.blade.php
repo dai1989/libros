@@ -10,6 +10,13 @@
 	Email: <input type="text" name="txtEmail" value="{{$contacto->email}}"><br>
 	Celular: <input type="text" name="txtCelular" value="{{$contacto->celular}}"><br>
 	Telefono Fijo: <input type="text" name="txtTelefonoFijo" value="{{$contacto->telefono_fijo}}"><br>
+	Personas:
+	<select name="cboPersona">
+		<option value="">--Seleccionar--</option><br>
+	@foreach ($personas_list as $persona)
+	  <option value="{{ $persona->id }}">{{ $persona->nombre }}</option>
+	@endforeach
+	</select><br>
 	
 	<input type="submit" value="Modificar Datos">
 

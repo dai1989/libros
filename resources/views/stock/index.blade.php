@@ -10,7 +10,8 @@
 	    <tr>
 		<th>Cantidad Actual</th>
 	    <th>Cantidad Minima</th>
-	    <th>-<th>
+	    <th>Libro</th>
+	    <th>Acciones<th>
 	    </tr>
 
 	@foreach ($stock_list as $stock)
@@ -18,6 +19,9 @@
     <tr>
 	<th>{{ $stock->cantidad_actual}}</th>
 	<th>{{ $stock->cantidad_minima}}</th>
+	<th>{{$stock->libro_id}}</th>
+
+
 	
 	<td>
 		 <a href="stock/{{$stock->id}}/edit"><i class='glyphicon glyphicon-edit'></i>Modificar</a></li> - 

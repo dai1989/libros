@@ -11,6 +11,17 @@
 
 	Cantidad Minima <input type="text" name="txtCantidadMinima" value="{{$stock->cantidad_minima}}"><br>
 
+	Libros:
+	<select name="cboLibros">
+       <option value="">--Seleccionar--</option><br> 
+	@foreach ($libros_list as $libros)
+	  <option value="{{ $libros->id }}">{{ $libros->titulo }}</option>
+	@endforeach
+	</select><br>
+	
+	
+	
+
 	
 	<input type="submit" value="Modificar Datos">
 

@@ -68,7 +68,8 @@ class LibrosController extends Controller
      public function edit($id) 
     {
       $libros =Libros::find($id);
-       return view ("libros.edit",["libros"=>$libros]);
+      $proveedores_list = Proveedor::all();
+       return view ("libros.edit",["libros"=>$libros,"proveedores_list"=>$proveedores_list]);
 
     }
     public function update (Request $request, $id)
@@ -88,17 +89,17 @@ class LibrosController extends Controller
       //obtener el cliente a modificar
       $libros = Libros::find($id);
 
-      //asignar datos al cliente
-      $libro->titulo =$titulo;
-      $libro->editorial =$editorial;
-      $libro->autor =$autor;
-      $libro->fecha_edicion =$fecha_edicion;
-      $libro->tipo_tapa =$tipo_tapa;
-      $libro->genero =$genero;
-      $libro->precio =$precio;
-      $libro->isbn =$isbn;
-      $libro->proveedor_id = $proveedor;
-      $libro-> save();
+      
+      $libros->titulo =$titulo;
+      $libros->editorial =$editorial;
+      $libros->autor =$autor;
+      $libros->fecha_edicion =$fecha_edicion;
+      $libros->tipo_tapa =$tipo_tapa;
+      $libros->genero =$genero;
+      $libros->precio =$precio;
+      $libros->isbn =$isbn;
+      $libros->proveedor_id = $proveedor;
+      $libros-> save();
      
       //$cliente->save();
 

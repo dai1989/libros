@@ -7,26 +7,26 @@
 <br><br>
 <table border="1">
 	    <tr>
-		<th>Nombre</th>
-	    <th>Apellido</th>
-	    <th>DNI</th>
+		<td>Nombre</td>
+	    <td>Apellido</td>
+	    <td>DNI</td>
 	    
-	    <th>Domicilio</th> 
-	    <th>Sexo</th>
-	    <th>Activo</th>
-	    <th>Opciones</th>
+	    <td>Domicilio</td> 
+	    <td>Sexo</td>
+	    <td>Activo</td>
+	    <td>Opciones</td>
 		</tr>
 
 	@foreach ($clientes_list as $cliente)
 
     <tr>
-	<th>{{ $cliente->persona->nombre}}</th>
-	<th>{{ $cliente->persona->apellido}}</th>
-	<th>{{ $cliente->persona->dni}}</th>
+	<td>{{ $cliente->persona->nombre}}</td>
+	<td>{{ $cliente->persona->apellido}}</td>
+	<td>{{ $cliente->persona->dni}}</td>
 	
-	<th>{{ $cliente->persona->domicilio}}</th>
-	<th>{{ $cliente->persona->sexo}}</th>
-	<th>{{ $cliente->activo}}</th>
+	<td>{{ $cliente->persona->domicilio}}</td>
+	<td>{{ $cliente->persona->sexo}}</td>
+	<td>{{ $cliente->activo}}</td>
 	<td> 
 		<a href="clientes/{{$cliente->id}}/edit"><i class='glyphicon glyphicon-edit'></i>Modificar</a></li> - 
 		

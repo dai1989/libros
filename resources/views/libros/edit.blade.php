@@ -38,6 +38,14 @@
 	Precio: <input type="text" name="txtPrecio" value="{{$libros->precio}}"><br>
 	
 	ISBN: <input type="text" name="txtIsbn" value="{{$libros->isbn}}"><br>
+	Proveedores:
+	<select name="cboProveedor">
+       <option value="">--Seleccionar--</option><br> 
+	@foreach ($proveedores_list as $proveedor)
+	  <option value="{{ $proveedor->id }}">{{ $proveedor->razon_social }}</option>
+	@endforeach
+	</select><br>
+	<input type="submit" value="Modificar Datos">
 	
 
 </form>

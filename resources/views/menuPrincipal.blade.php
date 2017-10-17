@@ -39,8 +39,8 @@
 
        </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Soporte</a></li>
-		<li><a href="login.php?logout"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
+        <li><a href="#" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Reporte</a></li>
+		<li><a href="#"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

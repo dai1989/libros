@@ -59,7 +59,8 @@ class StockController extends Controller
      public function edit($id) 
     {
       $stock =Stock::find($id);
-       return view ("stock.edit",["stock"=>$stock]);
+       $libros_list = Libros::all();  
+       return view ("stock.edit",["stock"=>$stock,"libros_list" => $libros_list]);
 
     }
     public function update (Request $request, $id)
@@ -67,6 +68,7 @@ class StockController extends Controller
       //obtener datos del formulario
       $cantidad_actual = $request->input ("txtCantidadActual");
       $cantidad_minima = $request->input ("txtCantidadMinima");
+      $libros = $request->input("cboLibros");
      
       
      

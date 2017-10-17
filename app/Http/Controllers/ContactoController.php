@@ -58,7 +58,9 @@ class ContactoController extends Controller
      public function edit($id) 
     {
       $contacto =Contacto::find($id);
-       return view ("contactos.edit",["contacto"=>$contacto]);
+      $personas_list = Persona::all();
+
+       return view ("contactos.edit",["contacto"=>$contacto,"personas_list"=>$personas_list]);
 
     }
     public function update (Request $request, $id)
