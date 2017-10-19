@@ -2,31 +2,33 @@
 @section('content')  
 {{session("mensaje")}}
 <br>
-<a href="stock/create">Nuevo Ingreso de Stock</a>
+
 <br><br>
 <center>
 	
 	<table border="1">
 	    <tr>
+	    <th>Libro</th>
 		<th>Cantidad Actual</th>
 	    <th>Cantidad Minima</th>
-	    <th>Libro</th>
-	    <th>Acciones<th>
+	   
+	    <th>Accion<th>
 	    </tr>
 
 	@foreach ($stock_list as $stock)
 
     <tr>
+    <th>{{$stock->libro->titulo}}</th>	
 	<th>{{ $stock->cantidad_actual}}</th>
 	<th>{{ $stock->cantidad_minima}}</th>
-	<th>{{$stock->libro_id}}</th>
+	
 
 
 	
 	<td>
-		 <a href="stock/{{$stock->id}}/edit"><i class='glyphicon glyphicon-edit'></i>Modificar</a></li> - 
+		 <a href="stock/{{$stock->id}}/edit"><i class='glyphicon glyphicon-edit'></i>Actualizar</a></li> 
 		
-		<a href="stock/{{$stock->id}}"><i class='glyphicon glyphicon-trash'></i>Eliminar</a></li>
+		
 		
 		
 		

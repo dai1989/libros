@@ -20,7 +20,7 @@
 	    <th>Genero</th>
 	    <th>Precio</th>
 	    <th>ISBN</th>
-	    <th>-<th>
+	    <th>Acciones<th>
 	    </tr>
 
 	@foreach ($libros_list as $libros)

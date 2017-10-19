@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Stock extends Model
 {
     protected $table="stock";
-    public function libros ()
+    public function libro ()
     {
     	return $this->belongsTo("App\Models\Libros");
     }

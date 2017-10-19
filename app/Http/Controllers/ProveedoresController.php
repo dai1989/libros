@@ -23,6 +23,10 @@ class ProveedoresController extends Controller
       $email = $request->input("txtEmail");
       $celular = $request->input("txtCelular");
       $telefono_fijo = $request->input("txtTelefonoFijo");
+      if ($razon_social ==""){
+        $mensaje = "ERROR";
+        return redirect("proveedores/create")->with("mensaje", $mensaje);
+      }
      
 
       $proveedor = new Proveedor ();

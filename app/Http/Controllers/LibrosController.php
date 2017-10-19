@@ -1,10 +1,11 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Libros;
 use App\Models\Proveedor;
+use App\Models\Stock;
 
 
 class LibrosController extends Controller
@@ -43,6 +44,15 @@ class LibrosController extends Controller
       $libro->isbn =$isbn;
       $libro->proveedor_id = $proveedor;
       $libro-> save();
+
+      //crear stock del libro
+      $stock = new Stock();
+      $stock->libro_id = $libro->id;
+      //$stock->cantidad_actual = 0;
+      //$stock->cantidad_minima = 0;
+      $stock->save();
+
+
         $mensaje = "Ingreso de libro creado con exito";
       return redirect("libros/create")-> with ("mensaje", $mensaje);
 

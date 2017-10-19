@@ -31,10 +31,7 @@
                     <div class="col-md-8"><font color="#000"><center><strong><h1>Ingresar Contacto</h1></strong></center></font></div>
                     <div class="col-md-2"></div>
                 </div>
-                <hr>
-    <h3>    
-        <p class="bg-danger" align="center">
-        <b>
+                
 
 
  {{session("mensaje")}}

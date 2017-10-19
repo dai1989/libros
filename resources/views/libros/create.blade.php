@@ -3,6 +3,7 @@
  
    {{session("mensaje")}}
 <br>
+<center>
 <form method="POST" action="{{ asset('libros') }}">
 
 	<input type="hidden" name="_token" value="{{ csrf_token()}}">
@@ -48,6 +49,7 @@
 
 </form>
 <br><br>
+</center>
 
 <a href="/sist_libros/public/libros">Listado</a>
 @endsection
