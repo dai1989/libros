@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	
 	<link rel="stylesheet" href="css/custom.css">
-	<link rel=icon href='img/logo-icon.png' sizes="32x32" type="image/png">
+	<link rel=icon href='libro.png' sizes="32x32" type="libro.png">
   </head>
   <body>
 		<nav class="navbar navbar-inverse ">
@@ -29,7 +29,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/sist_libros/public/clientes"><i class='glyphicon glyphicon-user'></i> Clientes <span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="/sist_libros/public/clientes"><i class='glyphicon glyphicon-user'></i> Clientes <span class="sr-only">(current)</span></a></li>
         <li class=""><a href="/sist_libros/public/contactos"><i class='glyphicon glyphicon-phone-alt'></i> Contactos</a></li>
 		<li class=""><a href="/sist_libros/public/proveedores"><i class='glyphicon glyphicon-user'></i> Proveedores</a></li>
 		<li class=""><a href="/sist_libros/public/libros"><i  class='glyphicon glyphicon-book'></i> Libros</a></li>
@@ -76,5 +76,3 @@
   </body>
 </html>
 
-</body>
-</html>
