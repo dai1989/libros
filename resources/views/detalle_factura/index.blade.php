@@ -6,22 +6,27 @@
 <center>
 <a href="detalle_factura/create"> Agregar Detalle de Factura</a>
 <br><br>
+<table class="display table table-hover" cellspacing="0" width="100%">
+       
+        <thead>
+            <tr>
+                <th>Factura</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Libros</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
 
-<table border="1">
-	    <tr>
-		<th>Cantidad</th>
-	    <th>Precio</th>
-	    
-	    
-	    <th>-<th>
-	    
-		</tr>
+
 
 	@foreach ($detalle_facturas_list as $detalle_factura)
 
     <tr>
-	<th>{{ $detalle_factura->cantidad}}</th>
+    <th>{{$detalle_factura->factura->numero}}</th>
+    <th>{{ $detalle_factura->cantidad}}</th>
 	<th>{{ $detalle_factura->precio}}</th>
+	<th>{{$detalle_factura->libro->titulo}}</th>
 	
 	
 	

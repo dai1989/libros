@@ -4,17 +4,20 @@
 <br>
 
 <br><br>
-<center>
-	
-	<table border="1">
-	    <tr>
-	    <th>Libro</th>
-		<th>Cantidad Actual</th>
-	    <th>Cantidad Minima</th>
-	   
-	    <th>Accion<th>
-	    </tr>
-
+<table class="display table table-hover" cellspacing="0" width="100%">
+       
+        <thead>
+            <tr>
+             
+                <th>Libros</th>
+                <th>Cantidad Actual</th>
+                <th>Cantidad Minima</th>
+               
+                <th>Acciones</th>
+             
+              
+            </tr>
+        </thead>
 	@foreach ($stock_list as $stock)
 
     <tr>

@@ -3,19 +3,25 @@
 
 {{session("mensaje")}}
 <center>
+ <center><h1 class="box-title">Lista de Clientes</h1></center>	
 <a href="clientes/create">Nuevo Cliente</a>
 <br><br>
-<table border="1">
-	    <tr>
-		<td>Nombre</td>
-	    <td>Apellido</td>
-	    <td>DNI</td>
-	    
-	    <td>Domicilio</td> 
-	    <td>Sexo</td>
-	    <td>Activo</td>
-	    <td>Opciones</td>
-		</tr>
+<table class="display table table-hover" cellspacing="0" width="100%">
+       
+        <thead>
+            <tr>
+             
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Domicilio</th>
+                <th>Sexo</th>
+                <th>Activo</th>
+             
+              <th>Acciones</th>
+            </tr>
+        </thead>
+
 
 	@foreach ($clientes_list as $cliente)
 

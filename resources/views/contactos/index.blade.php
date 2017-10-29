@@ -3,19 +3,27 @@
 
 {{session("mensaje")}}
 <center>
+ <center><h1 class="box-title">Lista de Contactos</h1></center>		
 <a href="contactos/create">Nuevo Contacto</a>
 <br><br>
-<table border="1">
-	    <tr>
-		<th>Email</th>
-	    <th>Celular</th>
-	    <th>Telefono Fijo</th>
-	    <th>-</th>
-		</tr>
+<table class="display table table-hover" cellspacing="0" width="100%">
+       
+        <thead>
+            <tr>
+             
+                <th>Cliente</th>
+                <th>Email</th>
+                <th>Celular</th>
+                <th>Telefono Fijo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
 
 	@foreach ($contactos_list as $contacto)
 
     <tr>
+    <th>{{$contacto->persona->nombre}}</th>	
 	<th>{{ $contacto->email}}</th>
 	<th>{{ $contacto->celular}}</th>
 	<th>{{ $contacto->telefono_fijo}}</th>

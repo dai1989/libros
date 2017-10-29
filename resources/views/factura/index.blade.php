@@ -5,20 +5,27 @@
 
 <a href="factura/create">Nuevo Factura</a>
 <br><br>
-<center>
-<table border="1">
-	    <tr>
-		<th>Fecha</th>
-	    <th>Tipo</th>
-	    <th>Numero</th>
-	    <th>Cuit</th>
-	    <th>-<th>
-	    
-		</tr>
+<table class="display table table-hover" cellspacing="0" width="100%">
+       
+        <thead>
+            <tr>
+             
+                <th>Cliente</th>
+                <th>Fecha</th>
+                <th>Tipo</th>
+                <th>Numero de Factura</th>
+                <th>Cuit</th>
+                <th>Acciones</th>
+             
+              
+            </tr>
+        </thead>
+
 
 	@foreach ($facturas_list as $factura)
 
     <tr>
+    <th>{{ $factura->cliente->persona->nombre}}</th>	
 	<th>{{ $factura->fecha}}</th>
 	<th>{{ $factura->tipo}}</th>
 	<th>{{ $factura->numero}}</th>
