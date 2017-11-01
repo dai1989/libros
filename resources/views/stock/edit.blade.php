@@ -7,17 +7,29 @@
 <form method="POST" action="{{ asset('stock/' . $stock->id) }}">
 	<input type="hidden" name="_method" value="PUT">
 	<input type="hidden" name="_token" value="{{ csrf_token()}}">
-	Cantidad Actual: <input type="number" name="txtCantidadActual" value="{{$stock->cantidad_actual}}"><br>
+	<div class="box-body col-xs-12">
+<div class="form-group col-xs-6">
+                      <label for="cantidad_actual">Cantidad Actual*</label>
+                      <input type="text" class="form-control" id="cantidad_actual" name="txtCantidadActual" value="{{$stock->cantidad_actual}}" placeholder="cantidad actual" >
+</div>
+<div class="form-group col-xs-6">
+                      <label for="cantidad_minima">Cantidad Minima*</label>
+                      <input type="text" class="form-control" id="celular" name="txtCelular" value="{{$stock->cantidad_minima}}" placeholder="Cantidad minima..." >
+</div>
+	
 
-	Cantidad Minima <input type="number" name="txtCantidadMinima" value="{{$stock->cantidad_minima}}"><br>
+	<h2>Libro:{{ $stock->libro->titulo }}</h2><br>
+	
+	
+	<div class="box-footer col-xs-12 ">
+                   <center> <button type="input" value="Modificar Datos" class="btn btn-primary">Modificar Datos</button></center>
+                    
 
-	Libro:{{ $stock->libro->titulo }}<br>
-	
-	
-	
+</div>
+
 
 	
-	<input type="submit" value="Modificar Datos">
+
 
 </form>
 <br><br>

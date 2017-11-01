@@ -6,9 +6,9 @@
                   <center><h1 class="box-title">Agregue Nuevo Cliente al Sistema</h1></center>
 {{session("mensaje")}} 
                   <br><br>
-                </div><!-- /.box-header -->
+                </div><!-- /.box-header --> 
 
-<div id="notificacion_resul_fanu"></div> 
+<div id="notificacion_resul_fanu"></div>  
 
 
 

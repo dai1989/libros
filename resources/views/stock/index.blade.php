@@ -1,5 +1,6 @@
 @extends('menuPrincipal')
-@section('content')  
+@section('content')
+  <center><h1>Lista de Stock</h1></center>
 {{session("mensaje")}}
 <br>
 

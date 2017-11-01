@@ -7,16 +7,21 @@
 <a href="proveedores/create">Nuevo Proveedor</a>
 <br><br>
 
-<table border="1">
-	    <tr>
-		<th>Razon Social</th>
-	    <th>Domicilio</th>
-	    <th>Email</th>
-	    <th>Celular</th>
-	    <th>Tel Fijo</th>
-	    <th>-<th>
-	    
-		</tr>
+<table class="display table table-hover" cellspacing="0" width="100%">
+       
+        <thead>
+            <tr>
+             
+                <th>Razon Social</th>
+                <th>Domicilio</th>
+                <th>Email</th>
+                <th>Celular</th>
+                <th>Telefono Fijo</th>
+                <th>Acciones</th>
+             
+              
+            </tr>
+        </thead>
 
 	@foreach ($proveedores_list as $proveedor)
 
