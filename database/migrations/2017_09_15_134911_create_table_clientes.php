@@ -20,6 +20,8 @@ class CreateTableClientes extends Migration
             $table->boolean('activo')->default(true);
             $table->timestamps();
         });
+        
+       
     }
 
     /**

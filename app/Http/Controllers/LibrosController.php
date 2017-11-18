@@ -10,16 +10,17 @@ use App\Models\Stock;
 
 class LibrosController extends Controller
 {
+    private $modulo = 'LIBROS';
     public function index()
     {
       $libros_list = Libros::all ();
-       return view("libros.index", ["libros_list"=> $libros_list]);
+       return view("libros.index", ["libros_list"=> $libros_list, "modulo" => $this->modulo]);
     }
     public function create()
     {
       $proveedores_list = Proveedor::all();
 
-      return view("libros.create", ["proveedores_list"=>$proveedores_list]);
+      return view("libros.create", ["proveedores_list"=>$proveedores_list,"modulo" => $this->modulo]);
     }
     public function store(Request $request)
     {
@@ -62,7 +63,7 @@ class LibrosController extends Controller
     {
       $libros = Libros::find($id);
 
-      return view ("libros.show",["libros"=>$libros]);
+      return view ("libros.show",["libros"=>$libros,"modulo"=>$this->modulo]);
     }
     public function destroy ($id)
     {
@@ -79,7 +80,7 @@ class LibrosController extends Controller
     {
       $libros =Libros::find($id);
       $proveedores_list = Proveedor::all();
-       return view ("libros.edit",["libros"=>$libros,"proveedores_list"=>$proveedores_list]);
+       return view ("libros.edit",["libros"=>$libros,"proveedores_list"=>$proveedores_list,"modulo"=>$this->modulo]);
 
     }
     public function update (Request $request, $id)

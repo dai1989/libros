@@ -24,9 +24,6 @@ class CreateTableLibros extends Migration
             $table->float ('precio', 8,2);
             $table->string ('isbn', 20);
             $table->date ('fecha_emision');
-
-
-
             $table->timestamps();
         });
     }

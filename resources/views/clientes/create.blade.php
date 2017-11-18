@@ -4,7 +4,7 @@
                 
                 <div class="box-header">
                   <center><h1 class="box-title">Agregue Nuevo Cliente al Sistema</h1></center>
-{{session("mensaje")}} 
+{{session("mensaje")}} z
                   <br><br>
                 </div><!-- /.box-header --> 
 

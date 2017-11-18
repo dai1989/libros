@@ -7,14 +7,15 @@ use App\Models\Persona;
 use App\Models\Cliente;
 class ClienteController extends Controller
 {
+    private $modulo = 'CLIENTES';
     public function index()
     {
     	$clientes_list = Cliente::all ();
-       return view("clientes.index", ["clientes_list"=> $clientes_list]);
+       return view("clientes.index", ["clientes_list"=> $clientes_list, "modulo" => $this->modulo]);
     }
     public function create()
     {
-    	return view("clientes.create");
+    	return view("clientes.create", ["modulo" => $this->modulo]);
     }
     public function store(Request $request)
     {
@@ -48,7 +49,7 @@ class ClienteController extends Controller
     {
       $cliente = Cliente::find($id);
 
-      return view ("clientes.show",["cliente"=>$cliente]);
+      return view ("clientes.show",["cliente"=>$cliente,"modulo"=>$this->modulo]);
     }
     public function destroy ($id)
     {
@@ -59,11 +60,12 @@ class ClienteController extends Controller
 
         $mensaje = "Cliente eliminado correctamente!";
         return redirect("clientes")->with("mensaje", $mensaje);
+        
     }
     public function edit($id) 
     {
       $cliente =Cliente::find($id);
-       return view ("clientes.edit",["cliente"=>$cliente]);
+       return view ("clientes.edit",["cliente"=>$cliente,"modulo"=>$this->modulo]);
 
     }
     public function update (Request $request, $id)

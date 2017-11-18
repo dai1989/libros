@@ -52,7 +52,7 @@
 
     <option value="">--Seleccionar--</option><br>
   @foreach ($clientes_list as $cliente)
-    <option value="{{ $cliente->id }}">{{$cliente->persona->nombre   }}</option>
+    <option value="{{ $cliente->id }}">{{$cliente->persona->nombre}}, {{$cliente->persona->apellido}}</option>
   @endforeach
   </select><br>
                       

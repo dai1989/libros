@@ -9,17 +9,18 @@ use App\Models\Libros;
 
 class DetalleFacturaController extends Controller
 {
+    private $modulo = 'DETALLE_FACTURA';
     public function index()
     {
       $detalle_facturas_list = DetalleFactura::all ();
-       return view("detalle_factura.index", ["detalle_facturas_list"=> $detalle_facturas_list]);
+       return view("detalle_factura.index", ["detalle_facturas_list"=> $detalle_facturas_list, "modulo"=>$this->modulo]);
     }
-    public function create()
+    public function create() 
     {
       $facturas_list = Factura::all();
-      $libros_list = Libros::all();
+      $libros_list = Libros::all(); 
 
-      return view("detalle_factura.create", ["facturas_list"=>$facturas_list, "libros_list" => $libros_list]);
+      return view("detalle_factura.create", ["facturas_list"=>$facturas_list, "libros_list" => $libros_list,"modulo"=>$this->modulo]);
     }
     public function store(Request $request)
     {
@@ -44,7 +45,7 @@ class DetalleFacturaController extends Controller
     {
       $detalle_factura = DetalleFactura::find($id);
 
-      return view ("detalle_factura.show",["detalle_factura"=>$detalle_factura]);
+      return view ("detalle_factura.show",["detalle_factura"=>$detalle_factura,"modulo"=>$this->modulo]);
     }
     public function destroy ($id)
     {
@@ -60,7 +61,7 @@ class DetalleFacturaController extends Controller
      public function edit($id) 
     {
       $detalle_factura =DetalleFactura::find($id);
-       return view ("detalle_factura.edit",["detalle_factura"=>$detalle_factura]);
+       return view ("detalle_factura.edit",["detalle_factura"=>$detalle_factura,"modulo"=>$this->modulo]);
 
     }
     public function update (Request $request, $id)

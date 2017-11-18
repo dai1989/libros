@@ -14,7 +14,7 @@
 </div>
 <div class="form-group col-xs-6">
                       <label for="cantidad_minima">Cantidad Minima*</label>
-                      <input type="text" class="form-control" id="celular" name="txtCelular" value="{{$stock->cantidad_minima}}" placeholder="Cantidad minima..." >
+                      <input type="text" class="form-control" id="celular" name="txtCantidadMinima" value="{{$stock->cantidad_minima}}" placeholder="Cantidad minima..." >
 </div>
 	
 

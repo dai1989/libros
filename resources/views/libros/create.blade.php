@@ -1,9 +1,7 @@
 @extends ('menuPrincipal')
 @section ('content')
-                
-
 {{session("mensaje")}} 
-                  
+  <center> <h1>Ingrese Nuevo Libro</h1> </center>              
 <div id="notificacion_resul_fanu"></div>  
 <form  method="post"  action="{{ asset('libros') }}" class="form-horizontal form_entrada" >                
   
@@ -85,9 +83,9 @@
                  
   </div>
 <div class="box-footer col-xs-12 ">
-                   <center> <button type="input" value="Guardar Libro" class="btn btn-primary">Guardar Libro</button></center>
+                   <center> <button type="input" value="Guardar Libro" class="btn btn-primary">Guardar Libro</button> <a href="/sist_libros/public/libros">Listado</a> </center>
 
-                   <a href="/sist_libros/public/libros">Listado</a>                 
+                                   
 
 </div>
 </form>

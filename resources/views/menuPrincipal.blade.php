@@ -29,18 +29,51 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class=""><a href="/sist_libros/public/clientes"><i class='glyphicon glyphicon-user'></i> Clientes <span class="sr-only">(current)</span></a></li>
-        <li class=""><a href="/sist_libros/public/contactos"><i class='glyphicon glyphicon-phone-alt'></i> Contactos</a></li>
-		<li class=""><a href="/sist_libros/public/proveedores"><i class='glyphicon glyphicon-user'></i> Proveedores</a></li>
-		<li class=""><a href="/sist_libros/public/libros"><i  class='glyphicon glyphicon-book'></i> Libros</a></li>
-		<li class=""><a href="/sist_libros/public/factura"><i  class='glyphicon glyphicon-list-alt'></i> Factura</a></li>
-		<li class=""><a href="/sist_libros/public/stock"><i  class='glyphicon glyphicon-eye-open'></i> Stock</a></li>
+        @if ($modulo == "CLIENTES")
+            <li class="active"><a href="/sist_libros/public/clientes"><i class='glyphicon glyphicon-user'></i> Clientes <span class="sr-only">(current)</span></a></li>
+        @else
+            <li class=""><a href="/sist_libros/public/clientes"><i class='glyphicon glyphicon-user'></i> Clientes <span class="sr-only">(current)</span></a></li>
+        @endif
+        @if ($modulo == "CONTACTOS")
+        <li class="active"><a href="/sist_libros/public/contactos"><i class='glyphicon glyphicon-phone-alt'></i> Contactos</a></li>
+        @else
+         <li class=""><a href="/sist_libros/public/contactos"><i class='glyphicon glyphicon-phone-alt'></i> Contactos</a></li>
+         @endif
+
+        @if ($modulo == "PROVEEDORES")
+		    <li class="active"><a href="/sist_libros/public/proveedores"><i class='glyphicon glyphicon-user'></i> Proveedores</a></li>
+        @else
+       <li class=""><a href="/sist_libros/public/proveedores"><i class='glyphicon glyphicon-user'></i> Proveedores</a></li>
+        @endif
+        @if ($modulo == "LIBROS")
+		<li class="active"><a href="/sist_libros/public/libros"><i  class='glyphicon glyphicon-book'></i> Libros</a></li>
+        @else
+        <li class=""><a href="/sist_libros/public/libros"><i  class='glyphicon glyphicon-book'></i> Libros</a></li>
+        @endif
+         @if ($modulo == "FACTURAS")
+        <li class="active"><a href="/sist_libros/public/factura"><i  class='glyphicon glyphicon-list-alt'></i> Facturas</a></li>
+        @else
+		    <li class=""><a href="/sist_libros/public/factura"><i  class='glyphicon glyphicon-list-alt'></i> Facturas</a></li>
+        @endif
+        @if ($modulo == "STOCK")
+         <li class="active"><a href="/sist_libros/public/stock"><i  class='glyphicon glyphicon-eye-open'></i> Stock</a></li>
+        @else
+        <li class=""><a href="/sist_libros/public/stock"><i  class='glyphicon glyphicon-eye-open'></i> Stock</a></li>
+        @endif
 
 
        </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Reporte</a></li>
-		<li><a href="#"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
+        @if ($modulo == "REPORTES")
+        <li class="active"> <a href="#" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Reporte</a></li>
+        @else
+        <li class=""> <a href="#" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Reporte</a></li>
+        @endif
+        @if ($modulo =="SALIR")
+		<li class="active"><a href="#"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
+    @else
+    <li class=""><a href="#"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
+    @endif
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

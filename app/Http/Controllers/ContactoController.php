@@ -8,16 +8,17 @@ use App\Models\Persona;
 
 class ContactoController extends Controller
 {
+    private $modulo = 'CONTACTOS';
     public function index()
     {
       $contactos_list = Contacto::all ();
-       return view("contactos.index", ["contactos_list"=> $contactos_list]);
+       return view("contactos.index", ["contactos_list"=> $contactos_list,"modulo"=>$this->modulo]);
     }
     public function create()
     {
       $personas_list = Persona::all();
 
-      return view("contactos.create", ["personas_list"=>$personas_list]);
+      return view("contactos.create", ["personas_list"=>$personas_list,"modulo"=>$this->modulo]);
     }
     public function store(Request $request)
     {
@@ -42,7 +43,7 @@ class ContactoController extends Controller
     {
       $contacto = Contacto::find($id);
 
-      return view ("contactos.show",["contacto"=>$contacto]);
+      return view ("contactos.show",["contacto"=>$contacto,"modulo"=>$this->modulo]);
     }
     public function destroy ($id)
     {
@@ -60,7 +61,7 @@ class ContactoController extends Controller
       $contacto =Contacto::find($id);
       $personas_list = Persona::all();
 
-       return view ("contactos.edit",["contacto"=>$contacto,"personas_list"=>$personas_list]);
+       return view ("contactos.edit",["contacto"=>$contacto,"personas_list"=>$personas_list,"modulo"=>$this->modulo]);
 
     }
     public function update (Request $request, $id)

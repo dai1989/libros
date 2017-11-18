@@ -17,4 +17,7 @@ Route::resource('proveedores','ProveedoresController');
 Route::resource('contactos','ContactoController');
 Route::resource('stock','StockController');
 Route::resource('factura','FacturaController');
-Route::resource('detalle_factura','DetalleFacturaController');
+/*Route::resource('detalle_factura','DetalleFacturaController');*/
+Route::get('factura/{id}/detalle/add','FacturaController@detalleadd');
+Route::post('factura/{factura_id}/detalle/store','FacturaController@detalleaddstore');
+Route::get('factura/detalle/delete/{detalle_id}','FacturaController@detalledelete');

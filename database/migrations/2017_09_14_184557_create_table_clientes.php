@@ -19,6 +19,8 @@ class CreateTableClientes extends Migration
             $table->foreign ('id_personas')->references('id')->on('personas');
             $table->boolean ('activo')-> default(false);
             $table->timestamps();
+
+            
         });
     }
 

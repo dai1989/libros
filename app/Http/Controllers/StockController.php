@@ -9,16 +9,17 @@ use App\Models\Stock;
 
 class StockController extends Controller
 {
+     private $modulo = 'STOCK';
     public function index()
     {
       $stock_list = Stock::all ();
-       return view("stock.index", ["stock_list"=> $stock_list]);
+       return view("stock.index", ["stock_list"=> $stock_list, "modulo"=> $this->modulo ]);
     }
      public function edit($id) 
     {
       $stock =Stock::find($id);
         
-       return view ("stock.edit",["stock"=>$stock]);
+       return view ("stock.edit",["stock"=>$stock,"modulo"=>$this->modulo]);
 
     }
     public function update (Request $request, $id)
@@ -40,7 +41,7 @@ class StockController extends Controller
 
      
     
-     
+
 
         $mensaje = "¡¡Stock actualizado correctamente!!";
       return redirect("stock/" . $id . "/edit")-> with ("mensaje", $mensaje);

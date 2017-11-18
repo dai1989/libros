@@ -9,7 +9,7 @@ class Proveedor extends Model
     protected $table="proveedores";
     public function libros ()
     {
-    	return $this->belongsTo("App\Models\Libros");
+    	return $this->hasMany("App\Models\Libros");
     }
 }
 

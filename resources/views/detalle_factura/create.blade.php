@@ -43,7 +43,7 @@
 
 <div class="form-group col-xs-6">
                       <label for="cboLibro">Libros</label>
-                      <select  name="cboPersona" class="form-control">
+                      <select  name="cboLibro" class="form-control">
 
     <option value="">--Seleccionar--</option><br>
   @foreach ($libros_list as $libro)
@@ -51,7 +51,7 @@
   @endforeach
   </select><br>
                       
-                      </select>
+                      </select> 
                  
                     
 </div>

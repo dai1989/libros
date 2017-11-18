@@ -6,13 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetalleFactura extends Model
 {
-    protected $table="detalle_factura";
-     public function factura ()
+    protected $table = 'detalle_factura';
+
+    public function obtenerSubTotal()
     {
-    	return $this->belongsTo("App\Models\Factura");
+        $subtotal = $this->precio * $this->cantidad;
+        return $subtotal;
     }
-    public function libro ()
+
+    public function libro()
     {
-    	return $this->belongsTo("App\Models\Libros");
+        return $this->belongsTo('App\Models\Libros');
     }
 }

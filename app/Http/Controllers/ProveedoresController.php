@@ -4,17 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Proveedor;
+use App\Models\Stock;
+use App\Models\DetalleFactura;
 
 class ProveedoresController extends Controller
 {
+    private $modulo = 'PROVEEDORES';
+
     public function index()
     {
     	$proveedores_list = Proveedor::all ();
-       return view("proveedores.index", ["proveedores_list"=> $proveedores_list]);
+       return view("proveedores.index", ["proveedores_list"=> $proveedores_list, "modulo" => $this->modulo]);
     }
     public function create()
     {
-    	return view("proveedores.create");
+    	return view("proveedores.create", ["modulo" => $this->modulo]);
     }
     public function store(Request $request)
     {
@@ -46,14 +50,39 @@ class ProveedoresController extends Controller
     {
       $proveedor = Proveedor::find($id);
 
-      return view ("proveedores.show",["proveedor"=>$proveedor]);
+      return view ("proveedores.show",["proveedor"=>$proveedor,"modulo"=>$this->modulo]);
     }
     public function destroy ($id)
     {
-        $proveedor = Proveedor::find($id);
-        $proveedor->delete();
 
-        $mensaje = "Proveedor eliminado correctamente!";
+        $proveedor = Proveedor::find($id);
+
+        
+        $libros_list = $proveedor->libros;
+        
+        foreach ($libros_list as $libro) {
+          $stock = Stock::where("libro_id", $libro->id)->first();
+          $detalleFactura = DetalleFactura::where("libro_id", $libro->id)->get();
+          foreach ($detalleFactura as $detalle) {
+            $detalle->delete();
+          }
+          if ($stock) {
+              $stock->delete();
+          }
+          $libro->delete();
+        }
+        
+
+        /*try {
+            $proveedor->delete();
+            $mensaje = "Proveedor eliminado correctamente!";
+        } catch (Exception $e) {
+           $mensaje = "No se pudo eliminar " . $e->getMessage();
+        }*/
+
+        
+
+        
         return redirect("proveedores")->with("mensaje", $mensaje);
       
 
@@ -61,7 +90,7 @@ class ProveedoresController extends Controller
     public function edit($id) 
     {
       $proveedor =Proveedor::find($id);
-       return view ("proveedores.edit",["proveedor"=>$proveedor]);
+       return view ("proveedores.edit",["proveedor"=>$proveedor,"modulo"=>$this->modulo]);
 
     }
     public function update (Request $request, $id)
