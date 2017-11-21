@@ -8,9 +8,10 @@
   <form method="POST" action="{{ asset('factura/' . $factura->id . '/detalle/store') }}">
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    
+     <a class="btn btn-info btn-lg btn-block" href="/sist_libros/public/factura/create">Nuevo comprobante</a>
 
-    <table class="display table table-hover" cellspacing="0" width="100%">
+    <table class="table table-bordered">
+
       <tr>
       <td>Numero Factura: {{ $factura->numero }}</td>
       <td>Fecha: {{ $factura->fecha }}</td>
@@ -34,28 +35,28 @@
             @endforeach
           </select>
         </td>
-        <td>
-          Cantidad: <input type="number" name="txtCantidad">
-        </td>
-      </tr>
-
-      <tr>
-        <td colspan="2" align="right">
+        <td colspan="2" align="left">
+          Cantidad: <input type="number" name="txtCantidad" type="submit" name="Agregar Libro">
+          
           <input type="submit" name="Agregar Libro">
         </td>
+        </td>
+         
       </tr>
+
+     
 
     </table>
   </form>
 
-    <table class="display table table-hover" cellspacing="0" width="100%">
+     <table class="table table-bordered">
       <tr>
-           <th style="width:100px;" class="text-right">Codigo</th>
-           <th style="width:160px;" class="text-right">Libro</th>
-           <th style="width:160px;" class="text-right">Precio Unitario</th>
-            <th style="width:160px;" class="text-right">Cantidad</th>
-            <th style="width:160px;" class="text-right">Subtotal</th>
-            <th style="width:30px;" class="text-right">Accion</th>
+           <th style="width:100px;" class="info">Codigo</th>
+           <th style="width:160px;" class="info">Libro</th>
+           <th style="width:160px;" class="info">Precio Unitario</th>
+            <th style="width:160px;" class="info">Cantidad</th>
+            <th style="width:160px;" class="info">Subtotal</th>
+           <th style="width:30px;" class="info">Accion</th>
 
       </tr>
 
@@ -68,6 +69,7 @@
           <td class="text-right">${{ $detalle->precio }}</td>
           <td class="text-right">{{ $detalle->cantidad }}</td>
           <td class="text-right">${{ $detalle->subtotal }}</td>
+         
 
           <td>
 
@@ -80,7 +82,15 @@
       
     </table>
     <br>
+    <table class="table table-bordered">
 
-    Total a pagar: ${{ $factura->total }}
+      <tr>
+      <td  align="center" class="active">Total de Factura: ${{ $factura->total }} </td>
+      
+      </tr>
+    </table>
+    <button type="button" class="btn btn-default"><a href="/sist_libros/public/factura">Listado</a></button>
+     
+    
 
 @endsection

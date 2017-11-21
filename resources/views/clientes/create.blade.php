@@ -21,7 +21,7 @@
 <div class="form-group col-xs-6">
                       <label for="nombre">Nombres*</label>
                       <input type="text" class="form-control" id="nombre" name="txtNombre" placeholder="Nombre" >
-</div>
+</div> 
 <div class="form-group col-xs-6">
                       <label for="apellido">Apellido*</label>
                       <input type="text" class="form-control" id="apellido" name="txtApellido" placeholder="Apellido" >
